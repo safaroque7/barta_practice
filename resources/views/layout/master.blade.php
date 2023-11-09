@@ -116,9 +116,14 @@
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                 tabindex="-1">
                                 @auth
+                                    <a href="{{ route('posts') }}"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                                        tabindex="-1" id="user-menu-item-0">Posts
+                                    </a>
                                     <a href="{{ route('profile') }}"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
-                                        tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                                        tabindex="-1" id="user-menu-item-0">Your Profile
+                                    </a>
                                     <a href="{{ route('editProfile') }}"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
                                         tabindex="-1" id="user-menu-item-1">Edit Profile</a>
@@ -137,6 +142,11 @@
                                 <a href="{{ route('posts') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
                                     tabindex="-1" id="user-menu-item-2">Posts
+                                </a>
+
+                                <a href="{{ route('show') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                                    tabindex="-1" id="user-menu-item-2">All Posts
                                 </a>
                             </div>
 
@@ -228,6 +238,7 @@
         @yield('form3')
         @yield('formFinal')
         @yield('posts')
+        @yield('postsDashboard')
 
 
         <!-- Barta Create Post Card -->

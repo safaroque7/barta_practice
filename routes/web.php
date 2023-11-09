@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FormController1;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomAuthController;
 
@@ -98,10 +99,15 @@ Route::get('/form2', [
     FormController1::class, 'showForm2'
 ])->name('form2.show');
 
+
 Route::get('/', [HomeController::class, 'index']);
 
 // Route::update('/user-update', [ProfileController::class, 'update'])->name('update');
 Route::post('/user-update', [CustomAuthController::class, 'update'])->name('update');
 
 
-Route::get('/posts', [HomeController::class,'posts'])->name('posts');
+// Route::get('/posts', [HomeController::class,'posts'])->name('posts');
+
+Route::get('/posts', [PostsController::class,'index'])->name('posts');
+Route::post('/posts/publish', [PostsController::class,'store'])->name('store');
+Route::get('/show', [PostsController::class, 'show'])->name('show');
